@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="container">
+        <div class="text-center">
+            <img class="img-responsive center-block" width="50%" src="{{ banner.image.url }}">
+        </div>
+    <div class="text-center">{{ banner.size }}</div>
+    <div class="text-center">{{ banner.description }}</div>
+    </div>
+{% endblock %}

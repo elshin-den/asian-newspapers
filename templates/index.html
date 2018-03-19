@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+  <div id="main-content" class="container">
+      <div class="jumbotron">
+      </div>
+
+      <div id="home-tiles" class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                  <a href="{% url 'newspapers' %}">
+                      <div id="menu-tile"><span>Газеты</span></div>
+                  </a>
+              </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+              <a href="{% url 'websites' %}">
+                  <div id="specials-tile"><span>Веб-сайты</span></div>
+              </a>
+          </div>
+      </div>
+  </div>
+{% endblock %}

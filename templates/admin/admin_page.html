@@ -1,0 +1,14 @@
+{% extends "base_admin.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            Пользователи:
+            <a href="/admin/categories/">Категории газет</a>
+            <ul id="users_list">
+                {% include 'inc-users_list.html' %}
+            </ul>
+        </div>
+    </div>
+    <form id="user-form">
+    </form>
+{% endblock %}

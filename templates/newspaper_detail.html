@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="container">
+        <h2 id="menu-categories-title" class="text-center">
+            {{ newspaper.name }}
+        </h2>
+        <div class="text-center">
+            {{ newspaper.description }}
+        </div>
+        <div class="text-center"><img class="img-responsive center-block" width="50%" src="{{ newspaper.image.url }}"></div>
+    {% if newspaper.prices %}
+        <h3 class="text-center">Цены</h3>
+        <div class="text-center">{{ newspaper.prices | linebreaks }}</div>
+    {% endif %}
+    {% if newspaper.discounts %}
+        <h3 class="text-center">Скидки</h3>
+        <div class="text-center">{{ newspaper.discounts | linebreaks }}</div>
+    {% endif %}
+
+    {% if newspaper.price_list and newspaper.price_list.url %}
+        <div class="text-center"><img src="{{ newspaper.price_list.url }}"></div>
+    {% endif %}
+
+    {% if banners %}
+        <h3 class="text-center">Примеры размещения</h3>
+        {% for banner in banners %}
+            <a href="{% url 'banner_detail' banner.id %}">
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <div class="category-tile ">
+                    <img width="200" height="200" src="{{ banner.image.url }}">
+                    <span>{{ banner.size }}</span>
+                </div>
+                <div class="text-center">{{ banner.description }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
