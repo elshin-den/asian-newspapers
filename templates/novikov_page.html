@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+{% load staticfiles %}
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}
+        <title>Реклама в азиатских газетах</title>
+    {% endblock %}
+    <link rel="icon" href="{% static 'images/newspaper-logo-favicon.png' %}" type="image/png" sizes="16x16">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/newspapers.css' %}">
+        <link rel="stylesheet" href="{% static 'css/public.css' %}">
+    {% endblock %}
+    {% block js %}
+        <script src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    {% endblock %}
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="text-center">
+            <img class="img-responsive center-block" width="50%" src="../static/images/baozi-1.png">
+        </div>
+        <div class="text-center">
+            <img class="img-responsive center-block" width="50%" src="../static/images/baozi-2.png">
+        </div>
+    </div>
+
+  </body>
 </html>

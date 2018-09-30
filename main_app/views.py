@@ -40,3 +40,7 @@ def banner_detail(request, banner_id):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+
+def novikov(request):
+    return render(request, 'novikov_page.html')
