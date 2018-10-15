@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from main_app.views import main, contacts, newspapers, websites, newspaper_detail, banner_detail, novikov
+from main_app.views import main, contacts, newspapers, websites, newspaper_detail, banner_detail, price_list
 from django.contrib import admin
 from user_management_app.views import login, logout, registration
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
@@ -35,6 +36,8 @@ urlpatterns += [
     url(r'^websites/$', websites, name='websites'),
     url(r'^newspapers/(\d+)$', newspaper_detail, name='newspaper_detail'),
     url(r'^banners/(\d+)$', banner_detail, name='banner_detail'),
+    url(r'^price_list/$', price_list, name='price_list'),
+    url(r'^.*$', RedirectView.as_view(url='/', permanent=False), name='index')
 ]
 
 #admin urls

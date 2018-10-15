@@ -38,6 +38,11 @@ def banner_detail(request, banner_id):
     return render(request, 'banner_detail.html', context)
 
 
+def price_list(request):
+    context = {'newspapers': Newspaper.objects.all()}
+    return render(request, 'price_list.html', context)
+
+
 def contacts(request):
     return render(request, 'contacts.html')
 

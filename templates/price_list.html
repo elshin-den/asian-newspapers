@@ -8,14 +8,31 @@
       </div>
 
     {% for newspaper in newspapers %}
-    <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+        <h2 id="menu-categories-title" class="text-center">
+            {{ newspaper.name }}
+        </h2>
         <a href="{% url 'newspaper_detail' newspaper.id %}">
             <div class="category-tile ">
                 <img width="200" height="200" src="{{ newspaper.image.url }}">
                 <span>{{ newspaper.name }}</span>
             </div>
         </a>
-    </div>
+        <div class="text-center">
+            {{ newspaper.description }}
+        </div>
+        {% if newspaper.prices %}
+            <h3 class="text-center">Цены</h3>
+            <div class="text-center">{{ newspaper.prices | linebreaks }}</div>
+        {% endif %}
+        {% if newspaper.discounts %}
+            <h3 class="text-center">Скидки</h3>
+            <div class="text-center">{{ newspaper.discounts | linebreaks }}</div>
+        {% endif %}
+
+        {% if newspaper.price_list and newspaper.price_list.url %}
+            <div class="text-center"><img src="{{ newspaper.price_list.url }}"></div>
+        {% endif %}
+
     {% endfor %}
     </div>
 {% endblock %}

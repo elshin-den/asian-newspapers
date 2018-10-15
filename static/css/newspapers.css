@@ -148,7 +148,7 @@ input
   }
   .navbar-brand h1 { /* newspaper name */
     padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
+    font-size: 1.5em; /* 1vw = 1% of viewport width */
   }
   .navbar-brand p { /* Kosher cert */
     font-size: .6em;
@@ -199,11 +199,11 @@ input
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-@media (max-width: 479px) {
+@media (max-width: 610px) {
   /* Header */
   .navbar-brand h1 { /* newspaper name */
     padding-top: 5px;
-    font-size: 6vw;
+    font-size: 1.2em;
   }
   /* End Header */
 }

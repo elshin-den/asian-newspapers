@@ -19,6 +19,34 @@
     {% block js %}
         <script src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
         <script src="{% static 'js/bootstrap.min.js'%}"></script>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter42697424 = new Ya.Metrika({
+                            id:42697424,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/42697424" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
     {% endblock %}
   </head>
   <body>
@@ -31,15 +59,15 @@
             </a>
 
             <div class="navbar-brand">
-              <a href="{% url 'main_page' %}"><h1>Реклама в азиатских газетах</h1></a>
+              <a href="{% url 'main_page' %}"><h1>Китайские, корейские, вьетнамские <br><br> газеты и сайты в России</h1></a>
               <p>
                 <span id="phone" class="hidden-xs">
                 <a href="tel:8-916-609-40-50">
                   <span>8-916-609-40-50</span>
                 </a>
-                <div>09:00-21:00</div>
-                    <p></p>
-                <div>vostok47@yandex.ru</div>
+                <div>
+                    <span id="email" class="hidden-sm hidden-xs">vostok47@yandex.ru</span>
+                </div>
               </span>
               </p>
             </div>
@@ -64,7 +92,11 @@
               </li>
               <li id="navMenuButton" ui-sref-active="active">
                 <a href="{% url 'websites' %}">
-                  <span class="glyphicon glyphicon-duplicate"></span><br class="hidden-xs">Веб-сайты</a>
+                  <span class="glyphicon glyphicon-duplicate"></span><br class="hidden-xs">Сайты</a>
+              </li>
+                <li id="navMenuButton" ui-sref-active="active">
+                <a href="{% url 'price_list' %}">
+                  <span class="glyphicon glyphicon-duplicate"></span><br class="hidden-xs">Цены</a>
               </li>
               <li>
                 <a href="{% url 'contacts' %}">
@@ -89,7 +121,7 @@
     <footer class="panel-footer">
       <div class="container">
         <div class="text-center">
-          &copy; Copyright Реклама в азиатских газетах 2017
+          &copy; Copyright Реклама в азиатских газетах 2018
         </div>
       </div>
     </footer>
