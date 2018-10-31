@@ -17,6 +17,15 @@
         <link rel="stylesheet" href="{% static 'css/public.css' %}">
     {% endblock %}
     {% block js %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91695010-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-91695010-1');
+        </script>
         <script src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
         <script src="{% static 'js/bootstrap.min.js'%}"></script>
         <!-- Yandex.Metrika counter -->
