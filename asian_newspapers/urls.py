@@ -36,8 +36,7 @@ urlpatterns += [
     url(r'^websites/$', websites, name='websites'),
     url(r'^newspapers/(\d+)$', newspaper_detail, name='newspaper_detail'),
     url(r'^banners/(\d+)$', banner_detail, name='banner_detail'),
-    url(r'^price_list/$', price_list, name='price_list'),
-    url(r'^.*$', RedirectView.as_view(url='/', permanent=False), name='index')
+    url(r'^price_list/$', price_list, name='price_list')
 ]
 
 #admin urls
@@ -59,3 +58,5 @@ url(r'^admin/$', admin_page),
 ]'''
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [url(r'^.*$', RedirectView.as_view(url='/', permanent=False), name='index')]
